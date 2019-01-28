@@ -1,11 +1,11 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+
 # @Author: laborde
 # @Date:   2019-01-28T09:51:58+01:00
 # @Email:  qlaborde@evertygo.com
 # @Last modified by:   laborde
-# @Last modified time: 2019-01-28T10:07:03+01:00
-
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
+# @Last modified time: 2019-01-28T11:34:10+01:00
 
 from snipsTools import SnipsConfigParser
 from hermes_python.hermes import Hermes
