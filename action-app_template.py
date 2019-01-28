@@ -2,7 +2,7 @@
 # @Date:   2019-01-28T09:51:58+01:00
 # @Email:  qlaborde@evertygo.com
 # @Last modified by:   laborde
-# @Last modified time: 2019-01-28T09:56:23+01:00
+# @Last modified time: 2019-01-28T10:07:03+01:00
 
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
@@ -50,11 +50,11 @@ class ImperiHome(object):
         coming_intent = intent_message.intent.intent_name
         if coming_intent == 'evertygo:about':
             self.about_callback(hermes, intent_message)
-        
+
     # --> Register callback function and start MQTT
     def start_blocking(self):
         with Hermes(MQTT_ADDR) as h:
             h.subscribe_intents(self.master_intent_callback).start()
 
 if __name__ == "__main__":
-    Template()
+    ImperiHome()
