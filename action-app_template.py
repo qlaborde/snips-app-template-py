@@ -5,7 +5,7 @@
 # @Date:   2019-01-28T09:51:58+01:00
 # @Email:  qlaborde@evertygo.com
 # @Last modified by:   laborde
-# @Last modified time: 2019-01-28T11:34:10+01:00
+# @Last modified time: 2019-01-28T11:39:01+01:00
 
 from snipsTools import SnipsConfigParser
 from hermes_python.hermes import Hermes
@@ -42,8 +42,12 @@ class ImperiHome(object):
         # action code goes here...
         print '[Received] intent: {}'.format(intent_message.intent.intent_name)
 
+        good_category = requests.get("http://192.168.10.185:8080/api/rest/imperihome/about").json();
+
+        print str(good_category.get("versionCode"))
+
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "About has been done", "")
+        hermes.publish_start_session_notification(intent_message.site_id, str(good_category.get("versionCode")), "")
 
     # --> Master callback function, triggered everytime an intent is recognized
     def master_intent_callback(self,hermes, intent_message):
